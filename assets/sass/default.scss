@@ -10,7 +10,7 @@
 body,div,article,aside,footer,section,header,main,nav,ul,ol,li,button,figure,picture,hr{
     display: flex;
 }
-hr{
+#hr{
     &.divider{
         background-color: var(--gray-3);
         height: 1px;
