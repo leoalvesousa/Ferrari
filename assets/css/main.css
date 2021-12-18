@@ -8,7 +8,7 @@
   --black-10: #0000001a;
   --black-75: #000000bf;
   --dark-0: #333;
-  --dark-1: #0000BF;
+  --dark-1: #000000BF;
   --gray: #79756C;
   --gray-0:#707070;
   --gray-1:#7E7E7E;
@@ -44,11 +44,11 @@
   margin: 0;
 }
 
-body, div, article, aside, footer, section, header, main, nav, ul, ol, li, button, figure, picture, hr {
+body, div, article, aside, footer, section, header, main, nav, ul, ol, li, button, figure, picture, hr, menu {
   display: flex;
 }
 
-hr.divider {
+#hr.divider {
   background-color: var(--gray-3);
   height: 1px;
   width: calc(100% - 2em);
@@ -72,6 +72,59 @@ hr.divider {
   border-top: var(--red) 6px solid;
   border-bottom: var(--green) 6px solid;
   height: 18px;
+}
+#header .menu {
+  transition: right 0.5s ease-in-out;
+  width: 300px;
+  height: 100vh;
+  padding-bottom: 50px;
+  background-color: var(--gray-7);
+  position: fixed;
+  right: -300px;
+  top: 0;
+  z-index: 4;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#header .menu nav {
+  flex-direction: column;
+}
+#header .menu nav ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 249px;
+  flex-direction: column;
+}
+#header .menu nav ul li {
+  padding: 14px 0;
+  list-style: none;
+  justify-content: center;
+}
+#header .menu nav ul li a {
+  text-decoration: none;
+  color: var(--gray-0);
+}
+#header .menu nav ul li.hide-guest, #header .menu nav ul li.divider {
+  display: none;
+}
+#header .menu nav ul li hr {
+  margin: 15px 0;
+}
+
+.open-menu {
+  overflow: hidden;
+}
+.open-menu #header .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  background-color: var(--dark-1);
+  z-index: 4;
+}
+.open-menu #header .menu {
+  right: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
