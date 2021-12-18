@@ -1,0 +1,16 @@
+#header{
+    min-width: 320px;
+    width: 100%;
+    background-color: var(--gray-5);
+    position: relative;
+    z-index: 3;
+    .italy{
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        background-color: white;
+        border-top:var(--red) 6px solid;
+        border-bottom: var(--green) 6px solid;
+        height: 18px;
+    }
+}
