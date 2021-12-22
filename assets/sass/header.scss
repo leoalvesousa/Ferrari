@@ -180,3 +180,77 @@
         }
     }
 }
+
+@media (min-width: 1200px){
+    .open-menu{
+        overflow: initial;
+        #header{
+            .overlay{
+                display: none;
+            }
+            .logo{
+                right: calc(100vw - 150px); 
+                width: 100px;
+                top: 17px;
+            }
+        }
+    }
+    #header{
+        height: 100px;
+        // width: 100%;
+        .italy{
+            top: 100px;
+        }
+        .logo{
+            right: calc(100vw - 150px);
+            width: 100px;
+            top: 17px;
+        }
+        .menu{
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: initial;
+            width: 100%;
+            height: 100px;
+            align-items: center;
+            right: initial;
+            position: static;
+            margin-left: 150px;
+            padding-bottom: 0;
+            .btn-register{
+                width: 200px;
+                margin-right: 30px;
+            }
+            nav{
+                width: 100%;
+                ul{
+                    flex-direction: row;
+                    margin-top:0;
+                    justify-content: flex-start;
+                    align-items: center;
+                    li{
+                        a{
+                            padding: 10px 0;
+                            font-size: 18px;
+                            min-width: 120px;
+                            text-align: center;
+                            &.hover{
+                                color:var(--black);
+                            }
+                        }
+                    }   
+                }
+            }
+            .footer{
+                width: initial;
+                justify-content: center;
+                hr{
+                    display: none;
+                }
+            }
+        }
+        #btn-open, #btn-close{
+            display: none;
+        }
+    }
+}
