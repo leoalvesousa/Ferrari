@@ -124,27 +124,10 @@
             }
         }
         .btn-register{
-            background-color: var(--green);
-            &:hover{
-                background-color: var(--green-hover);
-            }
-            &:active{
-                background-color: var(--green-active);
-            }
             margin: 20px;
             width: calc(300px - 40px);
-            min-width: 130px;
-            border: none;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: var(--gray-5);
-            font-weight: bold;
-            font-size: 16px;
-            border-radius: 5px;
-            text-transform: uppercase;
+            @include button;
+            @include button-green;
         }
     }
     button{
@@ -230,7 +213,8 @@
                     align-items: center;
                     li{
                         a{
-                            padding: 10px 0;
+                            padding: 0;
+                            margin: 10px;
                             font-size: 18px;
                             min-width: 120px;
                             text-align: center;
