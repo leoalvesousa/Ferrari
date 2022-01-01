@@ -87,37 +87,49 @@
         </div>
         <hr class="italy" />
     </header>
-    <main></main>    
-    <footer id="footer">
-        <button type="button" id=btn-up><svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317"
-                viewBox="0 0 64.317 64.317">
-                <path d="M0,0H64.317V64.317H0Z" fill="none" />
-                <path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z"
-                    transform="translate(10.079 13.439)" />
-            </svg></button>
-        <div class="columms">
-            <ul class="links">
-                <li class="title"> Links </li>
-                <li> <a href="#Home"> Home</a> </li>
-                <li> <a href="#revisão"> Revisão</a> </li>
-                <li> <a href="#contact"> Contato</a> </li>
-            </ul>
-            <ul>
-                <li class="title">Contato</li>
-                <li>Email:<a href="maito:ferrari@">ferrari@email.com</a></li>
-                <li class="icons">
-                    <a href="#instagram"><img src="assets/images/instagram.svg" alt="instagram" class="insta"></a>
-                    <a href="#facebook"><img src="assets/images/facebook.svg" alt="facebook" class="facebook"></a>
-                    <a href="#twitter"><img src="assets/images/twitter.svg" alt="twitter" class="twitter"></a>
-                    <a href="#youtube"><img src="assets/images/youtube.svg" alt="youtube" class="youtube"></a>
-                </li>
-            </ul>
-            <a class="logo-footer">
-                <img src="assets/images/ferrari-footer.svg" alt="Ferrari" class="ferrari-footer">
-            </a>
-        </div>
-        
-    </footer>
-</body>
 
-</html>
+    <section class="page" id="profile">
+        <header>
+            <h1>Editar Perfil</h1>
+        </header>
+        <main> 
+            <header class="page-title">
+                <h1>Dados Pessoais</h1>
+                <hr/>
+            </header>
+            <form>
+                <div class="field">
+                    <input type="text" name="name" id="name" value="Leo" readonly/>
+                    <label for="name">Nome Completo</label>
+                </div>
+                <div class="field">
+                    <input type="email" name="email" id="email"/>
+                    <label for="email">Email</label>
+                </div>
+                <div class="field">
+                    <input type="date" name="birth_at" id="birth_at"/>
+                    <label for="date">Data de Nascimento</label>
+                </div>
+                <div class="fields">
+                    <div class="field">
+                        <input type="text" name="document" id="document"/>
+                        <label for="document">Documento</label>
+                    </div>
+                    <div class="field">
+                        <input type="tel" name="phone" id="phone"/>
+                        <label for="phone">Telefone</label>
+                    </div>
+                </div>
+                <div class="toast success ">
+                    Dados salvos com sucesso!
+                    <button type="button" class="close">
+                        <span>&times;</span>
+                    </button> 
+                </div>
+                <footer class="fixed">
+                    <button type="submit">Salvar</button>
+                </footer>
+            </form>
+        </main>
+    </section>
+</body>

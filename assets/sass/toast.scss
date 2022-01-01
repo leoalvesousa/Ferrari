@@ -1,0 +1,33 @@
+.toast{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: var(--space);
+    align-items: center;
+    border: 1px solid transparent;
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+    .close{
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 32px;
+        transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+        color: var(--black-50);
+        &.hover{
+            color: black;
+        }
+    }
+    &.success{
+        color: var(--success-color);
+        background-color: var(--success);
+        border: var(--success-boder);
+    }
+    &.danger{
+        color: var(--danger-color);
+        background-color: var(--danger);
+        border: var(--danger-boder);
+    }
+}

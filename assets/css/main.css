@@ -32,7 +32,14 @@
   --blue: #00A0E6;
   --blue-hover: #1CABE9;
   --blue-active:#199BD4;
+  --success: #d4edda;
+  --success-boder:#C3E6CB;
+  --success-color:#155724;
+  --danger: #F8D7DA;
+  --danger-boder:#F5C6CB;
+  --danger-color:#721C24;
   --space: 20px;
+  --radius: 5px;
 }
 
 * {
@@ -71,6 +78,283 @@ body > main {
 @media (min-width: 1200px) {
   body > main {
     min-height: calc(100vh - 350px);
+  }
+}
+.toast {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  padding: var(--space);
+  align-items: center;
+  border: 1px solid transparent;
+  transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.toast .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 32px;
+  transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+  color: var(--black-50);
+}
+.toast .close.hover {
+  color: black;
+}
+.toast.success {
+  color: var(--success-color);
+  background-color: var(--success);
+  border: var(--success-boder);
+}
+.toast.danger {
+  color: var(--danger-color);
+  background-color: var(--danger);
+  border: var(--danger-boder);
+}
+
+form {
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--space);
+}
+form .fields {
+  flex-direction: column;
+}
+form .field {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: var(--space);
+}
+form .field label {
+  color: var(--gray-3);
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: color 0.3 ease-in-out;
+  z-index: 2;
+}
+form .field input, form .field textarea, form .field select {
+  border: var(--gray-3) 1px solid;
+  line-height: 1.5em;
+  padding: 10px;
+  padding-top: 33px;
+  font-size: 16px;
+  color: var(--dark-0);
+  outline: none;
+  border-radius: var(--radius);
+  position: relative;
+  top: 0px;
+  z-index: 1;
+  transition: border-color 0.3 ease-in-out;
+  width: 100%;
+}
+form .field input:focus, form .field textarea:focus, form .field select:focus {
+  border-color: var(--green);
+}
+form .field input:focus + label, form .field textarea:focus + label, form .field select:focus + label {
+  color: var(--green);
+}
+form .field input:focus[readonly], form .field textarea:focus[readonly], form .field select:focus[readonly] {
+  border: none;
+  color: var(--black);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 0;
+}
+form .field input:focus[readonly] + label, form .field textarea:focus[readonly] + label, form .field select:focus[readonly] + label {
+  color: var(--gray-0);
+  text-transform: uppercase;
+}
+form .field button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray-5);
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  background-color: gray;
+  color: var(--white);
+  background-color: var(--green);
+}
+form .field button:hover {
+  background-color: var(--black-10);
+}
+form .field button:active {
+  background-color: var(--black-75);
+}
+form .field button:hover {
+  background-color: var(--green-hover);
+}
+form .field button:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 1200px) {
+  form {
+    max-width: 400px;
+  }
+  form .fields {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  form .fields .field {
+    margin-right: var(--space);
+  }
+  form .fields .field:last-child {
+    margin-right: 0;
+  }
+  form .fields .field textarea {
+    min-height: 250px;
+  }
+  form button {
+    max-width: 340px;
+  }
+}
+header.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
+  color: var(--green);
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+header.page-title hr {
+  width: 68px;
+  border: none;
+  border-top: 4px solid var(--red);
+  margin: 10px 0;
+}
+
+.page {
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  overflow: auto;
+  margin-top: 18px;
+}
+.page .page-title {
+  margin: var(--space);
+  width: calc(100% - 40px);
+}
+.page > header {
+  width: 100%;
+  min-height: 130px;
+  background-color: var(--black);
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+}
+.page > header h1 {
+  font-size: 23px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.page > main {
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+.page > main .toast {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+.page > main .toast.open {
+  transform: translateY(-80px);
+}
+.page footer.fixed {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+  background-color: var(--gray-12);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  left: 0;
+  z-index: 4;
+}
+.page footer.fixed button, .page footer.fixed a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray-5);
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  background-color: gray;
+  color: var(--gray-3);
+  background-color: var(--gray-0);
+  color: var(--white);
+}
+.page footer.fixed button:hover, .page footer.fixed a:hover {
+  background-color: var(--black-10);
+}
+.page footer.fixed button:active, .page footer.fixed a:active {
+  background-color: var(--black-75);
+}
+.page footer.fixed button:hover, .page footer.fixed a:hover {
+  background-color: var(-gray-hover);
+}
+.page footer.fixed button:active, .page footer.fixed a:active {
+  background-color: var(--gray-active);
+}
+.page footer.fixed button[type=submit] {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray-5);
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  background-color: gray;
+  color: var(--white);
+  background-color: var(--black);
+}
+.page footer.fixed button[type=submit]:hover {
+  background-color: var(--black-10);
+}
+.page footer.fixed button[type=submit]:active {
+  background-color: var(--black-75);
+}
+.page footer.fixed button[type=submit]:hover {
+  background-color: var(-black-hover);
+}
+.page footer.fixed button[type=submit]:active {
+  background-color: var(--black-active);
+}
+
+@media (min-width: 1200px) {
+  .page > header {
+    justify-content: flex-start;
+    padding-left: 185px;
+    min-height: 160px;
+  }
+  .page > header h1 {
+    font-size: 32px;
   }
 }
 #header {
@@ -201,7 +485,7 @@ body > main {
   color: var(--gray-5);
   font-weight: bold;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   text-transform: uppercase;
   background-color: gray;
   min-width: 130px;
@@ -214,7 +498,7 @@ body > main {
   color: var(--gray-5);
   font-weight: bold;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   text-transform: uppercase;
   background-color: gray;
   color: var(--white);
