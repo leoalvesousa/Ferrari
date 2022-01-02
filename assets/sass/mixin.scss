@@ -17,7 +17,6 @@
         font-size: 16px;
         border-radius: var(--radius);
         text-transform: uppercase;
-        background-color: gray;
 }
 @mixin button-green {
     @include button;

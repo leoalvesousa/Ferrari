@@ -72,16 +72,6 @@ header{
             @include button-black;
         }
     }
-    &.blue{
-        >header{
-            background-color: var(--blue);
-        }
-        .fixed{
-            button[type=submit]{
-                @include button-blue;
-            }
-        }
-    }
 }
 @media (min-width: 1200px){
     .page{
@@ -91,20 +81,6 @@ header{
             min-height: 160px;
             h1{
                 font-size: 32px;
-            }
-        }
-        &.blue{
-            .fixed{
-                justify-content: flex-start;
-                button + button, a + button, a + a, button + a {
-                    margin-right: var(--space);
-                }
-                button, a {
-                    order: 1;
-                    &:first-child{
-                        order: 2;
-                    }
-                }       
             }
         }
     }

@@ -182,7 +182,6 @@ form .field button {
   font-size: 16px;
   border-radius: var(--radius);
   text-transform: uppercase;
-  background-color: gray;
   color: var(--white);
   background-color: var(--green);
 }
@@ -218,6 +217,133 @@ form .field button:active {
   }
   form button {
     max-width: 340px;
+  }
+}
+.calendar {
+  flex-direction: column;
+  padding: var(--space);
+  margin-bottom: var(--space);
+}
+.calendar .month {
+  justify-content: space-between;
+  align-items: center;
+  color: var(--gray-2);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.calendar .month h2 {
+  font-size: 22px;
+  font-weight: 400;
+}
+.calendar .month button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray-5);
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  border: 2px solid var(--gray-2);
+  color: var(--gray-2);
+}
+.calendar .month button:hover {
+  background-color: var(--black-10);
+}
+.calendar .month button:active {
+  background-color: var(--black-75);
+}
+.calendar .month .btn-prev, .calendar .month .btn-next {
+  min-width: 50px;
+  margin-left: 10px;
+}
+.calendar .month .btn-today {
+  display: none;
+}
+.calendar ul {
+  margin: 0;
+  padding: 0;
+}
+.calendar .weekdays {
+  font-weight: bold;
+  font-size: 12px;
+  color: var(--gray-0);
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar .weekdays li {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 0;
+  justify-content: center;
+}
+.calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 12vw);
+  grid-gap: 10px;
+  color: var(--dark-0);
+}
+.calendar .days li {
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.calendar .days li:hover {
+  background-color: var(--gray-7);
+}
+.calendar .days li.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.calendar .days li.active:hover {
+  background-color: var(--blue-hover);
+}
+.calendar .days li.active:active {
+  background-color: var(--blue-active);
+}
+.calendar .days li.selected {
+  background-color: var(--green);
+  color: var(--white);
+}
+.calendar .days li.selected:hover {
+  background-color: var(--green-hover);
+}
+.calendar .days li.selected:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 992px) {
+  .calendar {
+    max-width: 992px;
+  }
+  .calendar .month {
+    margin: var(--space) 0;
+  }
+  .calendar .month h2 {
+    font-size: 44px;
+  }
+  .calendar .month .btn-today {
+    display: flex;
+  }
+  .calendar .weekdays li {
+    font-size: 21px;
+    font-weight: bold;
+  }
+  .calendar .days {
+    grid-template-rows: repeat(5, 141.7142857143);
+  }
+  .calendar .days li {
+    font-size: 39px;
   }
 }
 header.page-title {
@@ -300,7 +426,6 @@ header.page-title hr {
   font-size: 16px;
   border-radius: var(--radius);
   text-transform: uppercase;
-  background-color: gray;
   color: var(--gray-3);
   background-color: var(--gray-0);
   color: var(--white);
@@ -330,7 +455,6 @@ header.page-title hr {
   font-size: 16px;
   border-radius: var(--radius);
   text-transform: uppercase;
-  background-color: gray;
   color: var(--white);
   background-color: var(--black);
 }
@@ -346,6 +470,37 @@ header.page-title hr {
 .page footer.fixed button[type=submit]:active {
   background-color: var(--black-active);
 }
+.page.blue > header {
+  background-color: var(--blue);
+}
+.page.blue .fixed button[type=submit] {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray-5);
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--blue);
+}
+.page.blue .fixed button[type=submit]:hover {
+  background-color: var(--black-10);
+}
+.page.blue .fixed button[type=submit]:active {
+  background-color: var(--black-75);
+}
+.page.blue .fixed button[type=submit]:hover {
+  background-color: var(-blue-hover);
+}
+.page.blue .fixed button[type=submit]:active {
+  background-color: var(--blue-active);
+}
 
 @media (min-width: 1200px) {
   .page > header {
@@ -355,6 +510,18 @@ header.page-title hr {
   }
   .page > header h1 {
     font-size: 32px;
+  }
+  .page.blue .fixed {
+    justify-content: flex-start;
+  }
+  .page.blue .fixed button + button, .page.blue .fixed a + button, .page.blue .fixed a + a, .page.blue .fixed button + a {
+    margin-right: var(--space);
+  }
+  .page.blue .fixed button, .page.blue .fixed a {
+    order: 1;
+  }
+  .page.blue .fixed button:first-child, .page.blue .fixed a:first-child {
+    order: 2;
   }
 }
 #header {
@@ -487,7 +654,6 @@ header.page-title hr {
   font-size: 16px;
   border-radius: var(--radius);
   text-transform: uppercase;
-  background-color: gray;
   min-width: 130px;
   border: none;
   height: 50px;
@@ -500,7 +666,6 @@ header.page-title hr {
   font-size: 16px;
   border-radius: var(--radius);
   text-transform: uppercase;
-  background-color: gray;
   color: var(--white);
   background-color: var(--green);
 }
