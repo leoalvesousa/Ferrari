@@ -1,38 +1,53 @@
-*{
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: 'Open Sans','Teko', 'Nothing you could do';
-    font-size: normal;
-    font-weight: 400;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Open Sans", "Teko", "Nothing you could do";
+  font-size: normal;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
 }
-body,div,article,aside,footer,section,header,main,nav,ul,ol,li,button,figure,picture,hr, menu {
-    display: flex;
+body,
+div,
+article,
+aside,
+footer,
+section,
+header,
+main,
+nav,
+ul,
+ol,
+li,
+button,
+figure,
+picture,
+hr,
+menu {
+  display: flex;
 }
-body{
-    margin: 0;
-    flex-direction: column;
-    background-color: var(--white);
-    >main{
-        width: 100vh;
-        height: calc(100vh - 400px);
+body {
+  margin: 0;
+  flex-direction: column;
+  background-color: var(--white);
+  > main {
+    min-height: 400px;
+  }
+}
+#hr {
+  &.divider {
+    background-color: var(--gray-3);
+    height: 1px;
+    width: calc(100% - 2em);
+    margin: 3em 0;
+    border: none;
+    align-self: center;
+  }
+}
+@media (min-width: 993px) {
+  body {
+    > main {
+      min-height: calc(100vh - 341px);
     }
-}
-#hr{
-    &.divider{
-        background-color: var(--gray-3);
-        height: 1px;
-        width: calc(100% - 2em);
-        margin: 3em 0;
-        border: none;
-        align-self: center;
-    }
-}
-@media (min-width: 1200px) {
-        body{
-            >main{
-                min-height: calc(100vh - 350px);
-        }
-    } 
+  }
 }

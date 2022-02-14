@@ -52,7 +52,23 @@
   margin: 0;
 }
 
-body, div, article, aside, footer, section, header, main, nav, ul, ol, li, button, figure, picture, hr, menu {
+body,
+div,
+article,
+aside,
+footer,
+section,
+header,
+main,
+nav,
+ul,
+ol,
+li,
+button,
+figure,
+picture,
+hr,
+menu {
   display: flex;
 }
 
@@ -62,8 +78,7 @@ body {
   background-color: var(--white);
 }
 body > main {
-  width: 100vh;
-  height: calc(100vh - 400px);
+  min-height: 400px;
 }
 
 #hr.divider {
@@ -75,9 +90,9 @@ body > main {
   align-self: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 993px) {
   body > main {
-    min-height: calc(100vh - 350px);
+    min-height: calc(100vh - 341px);
   }
 }
 .toast {
@@ -137,7 +152,9 @@ form .field label {
   transition: color 0.3 ease-in-out;
   z-index: 2;
 }
-form .field input, form .field textarea, form .field select {
+form .field input,
+form .field textarea,
+form .field select {
   border: var(--gray-3) 1px solid;
   line-height: 1.5em;
   padding: 10px;
@@ -152,20 +169,28 @@ form .field input, form .field textarea, form .field select {
   transition: border-color 0.3 ease-in-out;
   width: 100%;
 }
-form .field input:focus, form .field textarea:focus, form .field select:focus {
+form .field input:focus,
+form .field textarea:focus,
+form .field select:focus {
   border-color: var(--green);
 }
-form .field input:focus + label, form .field textarea:focus + label, form .field select:focus + label {
+form .field input:focus + label,
+form .field textarea:focus + label,
+form .field select:focus + label {
   color: var(--green);
 }
-form .field input:focus[readonly], form .field textarea:focus[readonly], form .field select:focus[readonly] {
+form .field input:focus[readonly],
+form .field textarea:focus[readonly],
+form .field select:focus[readonly] {
   border: none;
   color: var(--black);
   font-weight: bold;
   text-transform: uppercase;
   padding-bottom: 0;
 }
-form .field input:focus[readonly] + label, form .field textarea:focus[readonly] + label, form .field select:focus[readonly] + label {
+form .field input:focus[readonly] + label,
+form .field textarea:focus[readonly] + label,
+form .field select:focus[readonly] + label {
   color: var(--gray-0);
   text-transform: uppercase;
 }
@@ -198,7 +223,7 @@ form .field button:active {
   background-color: var(--green-active);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 993px) {
   form {
     max-width: 400px;
   }
@@ -285,7 +310,7 @@ form .field button:active {
 .calendar .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 12vw);
+  grid-template-rows: repeat(6, 12vw);
   grid-gap: 10px;
   color: var(--dark-0);
 }
@@ -340,7 +365,7 @@ form .field button:active {
     font-weight: bold;
   }
   .calendar .days {
-    grid-template-rows: repeat(5, 141.7142857143);
+    grid-template-rows: repeat(6, 7vw);
   }
   .calendar .days li {
     font-size: 39px;
@@ -352,7 +377,12 @@ header.page-title {
   align-items: flex-start;
   width: 100%;
 }
-header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
+header.page-title h1,
+header.page-title h2,
+header.page-title h3,
+header.page-title h4,
+header.page-title h5,
+header.page-title h6 {
   color: var(--green);
   margin: 0;
   font-size: 32px;
@@ -413,7 +443,8 @@ header.page-title hr {
   left: 0;
   z-index: 4;
 }
-.page footer.fixed button, .page footer.fixed a {
+.page footer.fixed button,
+.page footer.fixed a {
   min-width: 130px;
   border: none;
   height: 50px;
@@ -430,16 +461,20 @@ header.page-title hr {
   background-color: var(--gray-0);
   color: var(--white);
 }
-.page footer.fixed button:hover, .page footer.fixed a:hover {
+.page footer.fixed button:hover,
+.page footer.fixed a:hover {
   background-color: var(--black-10);
 }
-.page footer.fixed button:active, .page footer.fixed a:active {
+.page footer.fixed button:active,
+.page footer.fixed a:active {
   background-color: var(--black-75);
 }
-.page footer.fixed button:hover, .page footer.fixed a:hover {
+.page footer.fixed button:hover,
+.page footer.fixed a:hover {
   background-color: var(-gray-hover);
 }
-.page footer.fixed button:active, .page footer.fixed a:active {
+.page footer.fixed button:active,
+.page footer.fixed a:active {
   background-color: var(--gray-active);
 }
 .page footer.fixed button[type=submit] {
@@ -502,7 +537,7 @@ header.page-title hr {
   background-color: var(--blue-active);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 993px) {
   .page > header {
     justify-content: flex-start;
     padding-left: 185px;
@@ -514,13 +549,18 @@ header.page-title hr {
   .page.blue .fixed {
     justify-content: flex-start;
   }
-  .page.blue .fixed button + button, .page.blue .fixed a + button, .page.blue .fixed a + a, .page.blue .fixed button + a {
+  .page.blue .fixed button + button,
+.page.blue .fixed a + button,
+.page.blue .fixed a + a,
+.page.blue .fixed button + a {
     margin-right: var(--space);
   }
-  .page.blue .fixed button, .page.blue .fixed a {
+  .page.blue .fixed button,
+.page.blue .fixed a {
     order: 1;
   }
-  .page.blue .fixed button:first-child, .page.blue .fixed a:first-child {
+  .page.blue .fixed button:first-child,
+.page.blue .fixed a:first-child {
     order: 2;
   }
 }
@@ -588,6 +628,7 @@ header.page-title hr {
   margin: 0;
   padding: 0;
   margin-top: 249px;
+  width: 100;
   flex-direction: column;
 }
 #header .menu nav ul li {
@@ -693,7 +734,8 @@ header.page-title hr {
   outline: none;
   padding: 13px;
 }
-#header #btn-open, #header #btn-close {
+#header #btn-open,
+#header #btn-close {
   position: absolute;
   right: 0;
 }
@@ -718,7 +760,7 @@ header.page-title hr {
   width: 120px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 993px) {
   .open-menu {
     overflow: initial;
   }
@@ -785,19 +827,20 @@ header.page-title hr {
   #header .menu .footer hr {
     display: none;
   }
-  #header #btn-open, #header #btn-close {
+  #header #btn-open,
+#header #btn-close {
     display: none;
   }
 }
 #footer {
   width: 100%;
-  min-height: 270px;
+  min-width: 270px;
   background-color: var(--dark-0);
   position: relative;
   flex-direction: column;
   padding: var(--space);
   align-items: center;
-  z-index: 3;
+  z-index: 2;
   color: var(--gray-0);
 }
 #footer button {
@@ -857,13 +900,17 @@ header.page-title hr {
 }
 #footer .columms ul li.icons img {
   height: 24px;
-  width: 24px;
 }
 #footer .columms .logo-footer {
   margin: var(--space) 0;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 993px) {
+  #footer {
+    padding-left: 100px;
+    padding-bottom: 0;
+    padding-right: 100px;
+  }
   #footer .columms {
     flex-direction: row;
     justify-content: space-between;
