@@ -44,10 +44,10 @@ body {
     align-self: center;
   }
 }
-@media (min-width: 993px) {
-  body {
-    > main {
-      min-height: calc(100vh - 341px);
-    }
-  }
-}
+// @media (min-width: 993px) {
+//   body {
+//     > main {
+//       min-height: calc(100vh - 341px);
+//     }
+//   }
+// }
